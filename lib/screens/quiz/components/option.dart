@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:general/controllers/question_controllers.dart';
-import 'package:general/models/Questions.dart';
 import 'package:get/get.dart';
 
 import '../../constants.dart';

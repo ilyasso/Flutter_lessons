@@ -1,43 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:general/lesson_09/model/weather_model.dart';
 import 'package:general/lesson_09_01/screens/mainScreen.dart';
 import 'package:general/lesson_09_01/utils/location.dart';
 import 'package:general/lesson_09_01/utils/weather.dart';
-import 'package:get/route_manager.dart';
 
-class loadingScreen extends StatefulWidget {
-  const loadingScreen({Key key}) : super(key: key);
+class LoadingScreen extends StatefulWidget {
+  const LoadingScreen({Key key}) : super(key: key);
 
   @override
-  State<loadingScreen> createState() => _loadingScreenState();
+  State<LoadingScreen> createState() => _LoadingScreenState();
 }
 
-class _loadingScreenState extends State<loadingScreen> {
+class _LoadingScreenState extends State<LoadingScreen> {
   LocationHelper locationData;
-  Future<void> GetLocationData() async {
+
+  Future<void> getLocationData() async {
     locationData = LocationHelper();
     await locationData.getCurrentLocation();
 
-    if (locationData.latitide == null || locationData.longitude == null) {
+    if (locationData.latitude == null || locationData.longitude == null) {
       print('konum gelimiyour');
     } else {
-      print('kojum geliyor' + locationData.latitide.toString());
+      print('kojum geliyor' + locationData.latitude.toString());
       print('object' + locationData.longitude.toString());
     }
   }
 
   void getWeatherData() async {
-    await GetLocationData();
+    await getLocationData();
 
     WeatherData weatherdata = WeatherData(locationData: locationData);
     await weatherdata.getCurrentTemperature();
-    if (weatherdata.getCurrentTemperature() == null ||
+    if (weatherdata.currentTemperature == null ||
         weatherdata.currentCondition == null) {
       print('apiden bos gelip jata');
     }
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-      return mainScreen(
+      return MainScreen(
         weatherData: weatherdata,
       );
     }));

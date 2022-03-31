@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 enum Gender {
@@ -37,11 +36,11 @@ class BMICalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
-        primaryColor: Color(0xff0A0E20),
-        scaffoldBackgroundColor: Color(0xff0A0E20),
+        primaryColor: const Color(0xff0A0E20),
+        scaffoldBackgroundColor:const Color(0xff0A0E20),
       ),
       debugShowCheckedModeBanner: false,
-      home: BMIScreen(),
+      home:const BMIScreen(),
     );
   }
 }
@@ -54,13 +53,13 @@ class BMIScreen extends StatefulWidget {
 }
 
 class _BMIScreenState extends State<BMIScreen> {
-  final int _value = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('BMI Calculator'),
+        title: const Text('BMI Calculator'),
       ),
       body: SafeArea(
         child: Expanded(
@@ -78,7 +77,7 @@ class _BMIScreenState extends State<BMIScreen> {
                         },
                         customChild: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children:const [
                             Icon(
                               FontAwesomeIcons.mars,
                               size: 75,
@@ -106,7 +105,7 @@ class _BMIScreenState extends State<BMIScreen> {
                         },
                         customChild: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children:const [
                             Icon(
                               FontAwesomeIcons.venus,
                               size: 75,
@@ -136,7 +135,7 @@ class _BMIScreenState extends State<BMIScreen> {
                         customChild: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
+                            const Text(
                               'HEIGHT',
                               style: kLabelText,
                             ),
@@ -149,7 +148,7 @@ class _BMIScreenState extends State<BMIScreen> {
                                   height.toString(),
                                   style: kNumberText,
                                 ),
-                                Text(
+                                const Text(
                                   'см',
                                   style: kLabelText,
                                 ),
@@ -157,13 +156,13 @@ class _BMIScreenState extends State<BMIScreen> {
                             ),
                             SliderTheme(
                               data: SliderTheme.of(context).copyWith(
-                                thumbShape: RoundSliderThumbShape(
+                                thumbShape:const RoundSliderThumbShape(
                                     enabledThumbRadius: 14.0),
-                                thumbColor: Color(0xffF50D56),
-                                overlayShape: RoundSliderOverlayShape(
+                                thumbColor:const Color(0xffF50D56),
+                                overlayShape: const RoundSliderOverlayShape(
                                     overlayRadius: 28.0),
                                 activeTrackColor: Colors.white,
-                                inactiveTrackColor: Color(0xff4E4F5F),
+                                inactiveTrackColor: const Color(0xff4E4F5F),
                               ),
                               child: Slider(
                                 value: height.toDouble(),
@@ -192,7 +191,7 @@ class _BMIScreenState extends State<BMIScreen> {
                         customChild: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
+                            const Text(
                               'WEIGHT',
                               style: kLabelText,
                             ),
@@ -211,7 +210,7 @@ class _BMIScreenState extends State<BMIScreen> {
                                     });
                                   },
                                 ),
-                                SizedBox(width: 10.0),
+                                const SizedBox(width: 10.0),
                                 ButtonPlusMinus(
                                   buttonIcon: FontAwesomeIcons.plus,
                                   onPress: () {
@@ -232,7 +231,7 @@ class _BMIScreenState extends State<BMIScreen> {
                         customChild: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
+                            const Text(
                               'AGE',
                               style: kLabelText,
                             ),
@@ -251,7 +250,7 @@ class _BMIScreenState extends State<BMIScreen> {
                                     });
                                   },
                                 ),
-                                SizedBox(width: 10.0),
+                                const SizedBox(width: 10.0),
                                 ButtonPlusMinus(
                                   buttonIcon: FontAwesomeIcons.plus,
                                   onPress: () {
@@ -273,14 +272,14 @@ class _BMIScreenState extends State<BMIScreen> {
               GestureDetector(
                 onTap: (() {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => EkinchiBarak()));
+                      MaterialPageRoute(builder: (context) =>const  EkinchiBarak()));
                 }),
                 child: Container(
                   height: 75.0,
                   width: double.infinity,
-                  color: Color(0xffF50D56),
-                  margin: EdgeInsets.only(top: 18.0),
-                  child: Center(
+                  color:const Color(0xffF50D56),
+                  margin:const EdgeInsets.only(top: 18.0),
+                  child: const Center(
                     child: Text(
                       'CALCULATE',
                       style: TextStyle(fontSize: 25),
@@ -307,7 +306,7 @@ class ButtonPlusMinus extends StatelessWidget {
     return RawMaterialButton(
       onPressed: onPress,
       fillColor: kInactiveColor,
-      constraints: BoxConstraints.tightFor(
+      constraints:const BoxConstraints.tightFor(
         width: 44.0,
         height: 44.0,
       ),
@@ -336,7 +335,7 @@ class ReusableContainer extends StatelessWidget {
       onTap: otp,
       child: Container(
         child: customChild,
-        margin: EdgeInsets.all(15.0),
+        margin: const EdgeInsets.all(15.0),
         decoration: BoxDecoration(
           color: contColor,
           borderRadius: BorderRadius.circular(15.0),
@@ -353,7 +352,7 @@ class EkinchiBarak extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
-        primaryColor: Color(0xff0A0E20),
+        primaryColor:const  Color(0xff0A0E20),
         scaffoldBackgroundColor: Color(0xff0A0E20),
       ),
       debugShowCheckedModeBanner: false,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class FormsAndCards extends StatelessWidget {
   const FormsAndCards({Key key}) : super(key: key);
@@ -9,7 +8,7 @@ class FormsAndCards extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xFF00695C),
+        backgroundColor:const Color(0xFF00695C),
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0.0,
@@ -25,11 +24,11 @@ class FormsAndCards extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 50,
                 backgroundImage: AssetImage('assets/images/logo.png'),
               ),
-              Text(
+              const Text(
                 'Ismail uulu Abdibait',
                 style: TextStyle(
                   fontFamily: 'Pacifico',
@@ -38,7 +37,7 @@ class FormsAndCards extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              Text(
+              const Text(
                 'Flutter DEVELOPER',
                 style: TextStyle(
                   color: Colors.white,
@@ -46,28 +45,28 @@ class FormsAndCards extends StatelessWidget {
                   letterSpacing: 2.0,
                 ),
               ),
-              Divider(
+              const Divider(
                 color: Colors.white,
                 indent: 150,
                 endIndent: 150,
                 height: 40,
               ),
               Container(
-                padding: EdgeInsets.all(10.0),
+                padding:const EdgeInsets.all(10.0),
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                 ),
                 child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10.0, 0.0, 20.0, 0.0),
+                  children:const [
+                     Padding(
+                      padding: EdgeInsets.fromLTRB(10.0, 0.0, 20.0, 0.0),
                       child: Icon(
                         Icons.call,
                         color: Color(0xFF00897B),
                       ),
                     ),
-                    Text(
+                     Text(
                       '+996 501 11 93 98',
                       style: TextStyle(
                         color: Color(0xFF00897B),
@@ -77,22 +76,22 @@ class FormsAndCards extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(10.0),
-                margin: EdgeInsets.symmetric(vertical: 20.0),
+                padding: const EdgeInsets.all(10.0),
+                margin: const EdgeInsets.symmetric(vertical: 20.0),
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration:const  BoxDecoration(
                   color: Colors.white,
                 ),
                 child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10.0, 0.0, 20.0, 0.0),
+                  children: const[
+                     Padding(
+                      padding:  EdgeInsets.fromLTRB(10.0, 0.0, 20.0, 0.0),
                       child: Icon(
                         Icons.mail,
                         color: Color(0xFF00897B),
                       ),
                     ),
-                    Text(
+                     Text(
                       'abdibait.ismailuulu@gmail.com',
                       style: TextStyle(
                         color: Color(0xFF00897B),

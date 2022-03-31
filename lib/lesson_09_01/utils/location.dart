@@ -1,7 +1,7 @@
 import 'package:location/location.dart';
 
 class LocationHelper {
-  double latitide;
+  double latitude;
   double longitude;
 
   Future<void> getCurrentLocation() async {
@@ -27,7 +27,7 @@ class LocationHelper {
     }
 
     _locationData = await location.getLocation();
-    latitide = _locationData.latitude;
+    latitude = _locationData.latitude;
     longitude = _locationData.longitude;
   }
 }

@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:general/lesson_09/model/weather_model.dart';
 import 'package:general/lesson_09_01/utils/weather.dart';
 
-class mainScreen extends StatefulWidget {
+class MainScreen extends StatefulWidget {
   final WeatherData weatherData;
 
-  mainScreen({Key key, @required this.weatherData}) : super(key: key);
+  MainScreen({Key key, @required this.weatherData}) : super(key: key);
 
   @override
-  State<mainScreen> createState() => _mainScreenState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _mainScreenState extends State<mainScreen> {
+class _MainScreenState extends State<MainScreen> {
   int temperature;
   Icon weatherDisplayIcon;
   AssetImage backgroundImage;
@@ -62,7 +60,6 @@ class _mainScreenState extends State<mainScreen> {
               '$temperature°',
               style: TextStyle(
                 color: Colors.white,
-                
                 fontSize: 80.0,
                 letterSpacing: -5,
               ),
