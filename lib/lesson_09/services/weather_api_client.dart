@@ -9,9 +9,17 @@ class WeatherApiClient {
         "https://api.openweathermap.org/data/2.5/weather?q=$location&appid=d2b27bd13ce0e39a108c224644eb9552&units=metric");
 
     var response = await http.get(endpoint);
-
-    var body = jsonDecode(response.body);
-    return Weather.fromJson(body);
-    print(Weather.fromJson(body));
+    if (response.statusCode == 200) {
+      var body = jsonDecode(response.body);
+      print(body);
+      try {
+        print(Weather.fromJson(body).cityName);
+        return Weather.fromJson(body);
+      } catch (e) {
+        print(e);
+      }
+    } else {
+      print('apiden kelbei jatat');
+    }
   }
 }

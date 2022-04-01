@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:general/lesson_09/model/weather_model.dart';
 import 'package:general/lesson_09/services/weather_api_client.dart';
 import 'package:general/lesson_09/views/additional_information.dart';
 import 'package:general/lesson_09/views/current_weather.dart';
+import 'package:general/lesson_09_01/utils/weather.dart';
 
 class WeatherApp extends StatelessWidget {
   const WeatherApp({Key key}) : super(key: key);
@@ -24,12 +26,13 @@ class WeatherHomeScreen extends StatefulWidget {
 
 class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
   WeatherApiClient client = WeatherApiClient();
-  @override
-  void initState() {
-    super.initState();
-    client.getCurrentWeather("Bishkek");
+  Weather data;
+  String _city = 'Bishkek';
+  Future<void> GetData() async {
+    data = await client.getCurrentWeather('$_city');
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xfff9f9f9),
@@ -47,26 +50,43 @@ class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
           color: Colors.black,
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          currentWeather(Icons.wb_sunny_rounded, "26.3°", "Bishkek"),
-          SizedBox(
-            height: 20.0,
-          ),
-          Text(
-            'Кошумча маалымат',
-            style: TextStyle(
-                fontSize: 24,
-                color: Color(0xdd212121),
-                fontWeight: FontWeight.bold),
-          ),
-          Divider(),
-          SizedBox(
-            height: 20.0,
-          ),
-          AdditionalInformation('24', '2', '1014', '24.6')
-        ],
+      body: FutureBuilder(
+        future: GetData(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                currentWeather(Icons.wb_sunny_rounded, "${data.temp}°",
+                    "${data.cityName}"),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  'Кошумча маалымат',
+                  style: TextStyle(
+                      fontSize: 24,
+                      color: Color(0xdd212121),
+                      fontWeight: FontWeight.bold),
+                ),
+                Divider(),
+                SizedBox(
+                  height: 20.0,
+                ),
+                AdditionalInformation('${data.wind}', '${data.humidity}',
+                    '${data.pressure}', '${data.feels_like}'),
+                SizedBox(
+                  height: 20.0,
+                ),
+              ],
+            );
+          } else if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          return Container();
+        },
       ),
     );
   }
