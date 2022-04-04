@@ -53,13 +53,12 @@ class LocationHelper {
       return Future.error(
           'Location permissions are permanently denied, we cannot request permissions.');
     }
-    print('object');
-    Position _locationData1 = await Geolocator.getCurrentPosition(
+    print('you are');
+    Position _locationData = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
-    Position _locationData = await Geolocator.getLastKnownPosition();
     print('object');
-    longitude = _locationData1.longitude;
-    latitude = _locationData1.latitude;
+    longitude = _locationData.longitude;
+    latitude = _locationData.latitude;
     print('$latitude');
   }
 }

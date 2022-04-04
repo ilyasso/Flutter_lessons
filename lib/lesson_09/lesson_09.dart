@@ -3,7 +3,6 @@ import 'package:general/lesson_09/model/weather_model.dart';
 import 'package:general/lesson_09/services/weather_api_client.dart';
 import 'package:general/lesson_09/views/additional_information.dart';
 import 'package:general/lesson_09/views/current_weather.dart';
-import 'package:general/lesson_09_01/utils/weather.dart';
 
 class WeatherApp extends StatelessWidget {
   const WeatherApp({Key key}) : super(key: key);
