@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:general/lesson_09_01/screens/mainScreen.dart';
@@ -16,6 +18,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   Future<void> getLocationData() async {
     locationData = LocationHelper();
+    print("$locationData");
     await locationData.getCurrentLocation();
 
     if (locationData.latitude == null || locationData.longitude == null) {
@@ -33,7 +36,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     await weatherdata.getCurrentTemperature();
     if (weatherdata.currentTemperature == null ||
         weatherdata.currentCondition == null) {
-      print('apiden bos gelip jata');
+      print('apiden bosh gelip jata');
     }
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
       return MainScreen(

@@ -58,8 +58,8 @@ dependencies:
   flutter_spinkit: ^5.1.0
 
 
-  #This plugin for Flutter handles getting a location on Android and iOS. It also provides callbacks when the location is changed.
-  location: ^4.3.0
+  #A Flutter geolocation plugin which provides easy access to platform specific location services (FusedLocationProviderClient or if not available the LocationManager on Android and CLLocationManager on iOS)
+  geolocator: ^8.2.0
   
 dev_dependencies:
   flutter_test:
