@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:general/lesson_03.dart';
 import 'package:general/lesson_09_01/main.dart';
+import 'package:general/lesson_10/main.dart';
 import 'package:general/screens/quiz/quiz_screens.dart';
 import 'package:general/screens/score/score_screens.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -88,8 +89,8 @@ class MeninTirkemem extends StatelessWidget {
                       link: WEatherAppScreen(),
                     ),
                     HomePageButton(
-                      name: 'Тиркеме 4',
-                      link: DiceApp(),
+                      name: 'Тиркеме 10',
+                      link: WhatsappApp(),
                     ),
                     HomePageButton(
                       name: 'Тиркеме 5',
