@@ -17,7 +17,7 @@ class _WhatsAppHomeScreenState extends State<WhatsAppHomeScreen>
   void initState() {
     // TODO: implement initState
     super.initState();
-    _controller = TabController(length: 4, vsync: this, initialIndex: 0);
+    _controller = TabController(length: 4, vsync: this, initialIndex: 1);
   }
 
   @override

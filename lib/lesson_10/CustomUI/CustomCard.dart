@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:general/lesson_10/model/ChatModel.dart';
+import 'package:general/lesson_10/screen/IndividualPage.dart';
+import 'package:get/route_manager.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({Key key}) : super(key: key);
+  const CustomCard({Key key, this.chatModel}) : super(key: key);
+  final ChatModel chatModel;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (contex) => IndividualPage()));
+      },
       child: Column(
         children: [
           ListTile(
             leading: CircleAvatar(
               radius: 25,
               child: WebsafeSvg.asset(
-                'assets/icons/groups.svg',
+                chatModel.isGroup
+                    ? 'assets/icons/groups.svg'
+                    : 'assets/icons/person.svg',
                 color: Colors.white,
                 height: 37,
                 width: 37,
@@ -22,7 +31,7 @@ class CustomCard extends StatelessWidget {
               backgroundColor: Colors.blueGrey,
             ),
             title: Text(
-              'Dev Stack ',
+              chatModel.name,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -35,12 +44,12 @@ class CustomCard extends StatelessWidget {
                   width: 3,
                 ),
                 Text(
-                  "Hi Dev Stack",
+                  chatModel.currentMessage,
                   style: TextStyle(fontSize: 13),
                 ),
               ],
             ),
-            trailing: Text("18:04"),
+            trailing: Text(chatModel.time),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 20, left: 20),
