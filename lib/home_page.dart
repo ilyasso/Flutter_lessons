@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:general/lesson_03.dart';
-import 'package:general/lesson_09_01/main.dart';
 import 'package:general/lesson_10/main.dart';
-import 'package:general/screens/quiz/quiz_screens.dart';
-import 'package:general/screens/score/score_screens.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-
 import 'home_page_button.dart';
-import 'lesson_04.dart';
-import 'lesson_05.dart';
-import 'lesson_06.dart';
-import 'lesson_06_02.dart';
-import 'lesson_07.dart';
-import 'lesson_08.dart';
+import 'lesson_01/lesson_01.dart';
+import 'lesson_03/lesson_03.dart';
+import 'lesson_04/lesson_04.dart';
+import 'lesson_05/lesson_05.dart';
+import 'lesson_06/lesson_06.dart';
+import 'lesson_06_02/lesson_06_02.dart';
+import 'lesson_07/lesson_07.dart';
+import 'lesson_08/lesson_08.dart';
 import 'lesson_09/lesson_09.dart';
+import 'lesson_09_01/main.dart';
+
 
 class MeninTirkemem extends StatelessWidget {
   const MeninTirkemem({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    var whatsappApp = WhatsappApp;
+    return MaterialApp(
         title: "Башкы бет",
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

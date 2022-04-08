@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
 
-import 'lesson_02.dart';
+import '../lesson_02/lesson_02.dart';
+
+class CounterApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Counter',
+      theme: ThemeData(),
+      home: const MyHomePage(),
+    );
+  }
+}
+
 
 class MyHomePage extends StatefulWidget {
   final String title;

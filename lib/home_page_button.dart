@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'lesson_01.dart';
 
 class HomePageButton extends StatelessWidget {
   final name;
@@ -28,14 +27,3 @@ class HomePageButton extends StatelessWidget {
   }
 }
 
-class CounterApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Counter',
-      theme: ThemeData(),
-      home: const MyHomePage(),
-    );
-  }
-}
