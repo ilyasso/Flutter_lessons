@@ -60,6 +60,8 @@ dependencies:
 
   #A Flutter geolocation plugin which provides easy access to platform specific location services (FusedLocationProviderClient or if not available the LocationManager on Android and CLLocationManager on iOS)
   geolocator: ^8.2.0
+
+  emoji_picker: ^0.1.0
   
 dev_dependencies:
   flutter_test:
@@ -70,7 +72,6 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

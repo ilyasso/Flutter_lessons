@@ -18,7 +18,6 @@ class MeninTirkemem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var whatsappApp = WhatsappApp;
     return MaterialApp(
         title: "Башкы бет",
         debugShowCheckedModeBanner: false,

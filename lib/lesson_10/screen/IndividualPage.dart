@@ -1,7 +1,4 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 import '../model/ChatModel.dart';

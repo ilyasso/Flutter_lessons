@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import '../pages/chat_page.dart';
 
 class WhatsAppHomeScreen extends StatefulWidget {
