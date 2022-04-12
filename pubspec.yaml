@@ -61,7 +61,11 @@ dependencies:
   #A Flutter geolocation plugin which provides easy access to platform specific location services (FusedLocationProviderClient or if not available the LocationManager on Android and CLLocationManager on iOS)
   geolocator: ^8.2.0
 
-  emoji_picker: ^0.1.0
+  emoji_picker_2: ^0.4.0
+
+
+  #Wraps platform-specific persistent storage for simple data (NSUserDefaults on iOS and macOS, SharedPreferences on Android, etc.). Data may be persisted to disk asynchronously, and there is no guarantee that writes will be persisted to disk after returning, so this plugin must not be used for storing critical data.
+  shared_preferences: ^2.0.13
   
 dev_dependencies:
   flutter_test:
