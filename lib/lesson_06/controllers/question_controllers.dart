@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:general/models/Questions.dart';
-import 'package:general/screens/score/score_screens.dart';
 import 'package:get/get.dart';
+
+import '../models/Questions.dart';
+import '../screens/score/score_screens.dart';
 
 // ignore: deprecated_member_use
 class QuestionController extends GetxController

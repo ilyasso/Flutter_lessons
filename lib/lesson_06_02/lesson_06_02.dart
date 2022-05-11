@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:general/models/question_class.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+
+import 'models/question_class.dart';
 
 QuestionBrain brain = new QuestionBrain();
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screen/main_screen.dart';
+import 'Screens/main_screen.dart';
 
 class WhatsappApp extends StatelessWidget {
   const WhatsappApp({Key key}) : super(key: key);

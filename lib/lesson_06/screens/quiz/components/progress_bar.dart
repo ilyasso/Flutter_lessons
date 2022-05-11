@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:general/controllers/question_controllers.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:websafe_svg/websafe_svg.dart';
+import '../../../controllers/question_controllers.dart';
 import '../../constants.dart';
 
 class ProgressBar extends StatelessWidget {

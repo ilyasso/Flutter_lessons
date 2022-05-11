@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:general/controllers/question_controllers.dart';
-import 'package:general/screens/constants.dart';
 import 'package:get/get.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
+import '../../../controllers/question_controllers.dart';
+import '../../constants.dart';
 import 'progress_bar.dart';
 import 'question_card.dart';
 
