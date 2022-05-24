@@ -114,7 +114,7 @@ class _IndividualPageState extends State<IndividualPage> {
                 value: "More",
               ),
             ];
-          })
+          }),
         ],
       ),
       body: Container(
