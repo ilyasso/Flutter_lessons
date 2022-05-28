@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:general/lesson_10/CustomUI/ButtonCard.dart';
 import 'package:general/lesson_10/CustomUI/ContactCard.dart';
+import 'package:general/lesson_10/Screens/CreateGroup.dart';
 
 import '../model/ChatModel.dart';
 
@@ -98,9 +99,15 @@ class _SelectContactState extends State<SelectContact> {
             itemCount: contacts.length + 2,
             itemBuilder: (context, index) {
               if (index == 0) {
-                return ButtonCard(
-                  icon: Icons.groups,
-                  name: "New group",
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (builder) => CreateGroup()));
+                  },
+                  child: ButtonCard(
+                    icon: Icons.groups,
+                    name: "New group",
+                  ),
                 );
               } else if (index == 1) {
                 return ButtonCard(
