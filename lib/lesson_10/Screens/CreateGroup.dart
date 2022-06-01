@@ -39,7 +39,7 @@ class _CreateGroupState extends State<CreateGroup> {
       status: "A Java developer",
     ),
   ];
-  List<ChatModel> groups = [];
+  List<ChatModel> groupmember = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,43 +76,64 @@ class _CreateGroupState extends State<CreateGroup> {
       body: Stack(
         children: [
           ListView.builder(
-              itemCount: contacts.length,
+              itemCount: contacts.length + 1,
               itemBuilder: (context, index) {
+                if (index == 0) {
+                  return Container(
+                    height: groupmember.length > 0 ? 90 : 10,
+                  );
+                }
                 return InkWell(
                   onTap: () {
-                    if (contacts[index].select == false) {
+                    if (contacts[index - 1].select == false) {
                       setState(() {
-                        contacts[index].select = true;
-                        groups.add(contacts[index]);
+                        contacts[index - 1].select = true;
+                        groupmember.add(contacts[index - 1]);
                       });
                     } else {
                       setState(() {
-                        contacts[index].select = false;
-                        groups.remove(contacts[index]);
+                        contacts[index - 1].select = false;
+                        groupmember.remove(contacts[index - 1]);
                       });
                     }
                   },
                   child: ContactCard(
-                    contact: contacts[index],
+                    contact: contacts[index - 1],
                   ),
                 );
               }),
-          Column(
-            children: [
-              Container(
-                height: 75,
-                color: Colors.white,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: contacts.length,
-                  itemBuilder: (context, index) => AvtarCard(),
-                ),
-              ),
-              Divider(
-                thickness: 1,
-              )
-            ],
-          )
+          groupmember.length > 0
+              ? Column(
+                  children: [
+                    Container(
+                      height: 75,
+                      color: Colors.white,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: contacts.length,
+                          itemBuilder: (context, index) {
+                            if (contacts[index].select == true)
+                              return InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    contacts[index].select = false;
+                                    groupmember.remove(contacts[index]);
+                                  });
+                                },
+                                child: AvtarCard(
+                                  contact: contacts[index],
+                                ),
+                              );
+                            else
+                              return Container();
+                          }),
+                    ),
+                    Divider(
+                      thickness: 1,
+                    )
+                  ],
+                )
+              : Container(),
         ],
       ),
     );
