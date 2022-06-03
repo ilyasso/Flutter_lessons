@@ -66,6 +66,17 @@ dependencies:
 
   #Wraps platform-specific persistent storage for simple data (NSUserDefaults on iOS and macOS, SharedPreferences on Android, etc.). Data may be persisted to disk asynchronously, and there is no guarantee that writes will be persisted to disk after returning, so this plugin must not be used for storing critical data.
   shared_preferences: ^2.0.13
+
+  #A Flutter plugin for iOS, Android and Web allowing access to the device cameras.
+  camera: ^0.9.7+1
+
+  #A Flutter plugin for finding commonly used locations on the filesystem. Supports Android, iOS, Linux, macOS and Windows. Not all methods are supported on all platforms.
+  path_provider: ^2.0.10
+
+  #A comprehensive, cross-platform path manipulation library for Dart.
+  #The path package provides common operations for manipulating paths: joining, splitting, normalizing, etc.
+  #We've tried very hard to make this library do the "right" thing on whatever platform you run it on, including in the browser. When you use the top-level functions, it will assume the current platform's path style and work with that. If you want to explicitly work with paths of a specific style, you can construct a p.Context for that style.
+  path: 
   
 dev_dependencies:
   flutter_test:
