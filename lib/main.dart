@@ -4,8 +4,8 @@ import 'package:general/lesson_10/Screens/CameraScreen.dart';
 import 'package:general/lesson_10/main.dart';
 import 'home_page.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  cameras = availableCameras();
+  cameras = await availableCameras();
   runApp(const WhatsappApp());
 }
