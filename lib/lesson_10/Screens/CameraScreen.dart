@@ -16,8 +16,9 @@ class CameraScreen extends StatefulWidget {
 
 class _CameraScreenState extends State<CameraScreen> {
   CameraController _cameraController;
-
   Future<void> cameraValue;
+  bool isRecording = false;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -68,7 +69,17 @@ class _CameraScreenState extends State<CameraScreen> {
                           size: 28,
                         ),
                       ),
-                      InkWell(
+                      GestureDetector(
+                        onLongPress: () async {
+                          await _cameraController.startVideoRecording();
+                        },
+                        onLongPressUp: () async {
+                          final path = join(
+                              (await getTemporaryDirectory()).path,
+                              "${DateTime.now()}.mp4");
+                          await _cameraController
+                              .stopVideoRecording(XFile(path: path));
+                        },
                         onTap: () {
                           takePhoto(context);
                         },
