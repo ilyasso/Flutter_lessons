@@ -7,5 +7,5 @@ import 'home_page.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   cameras = await availableCameras();
-  runApp(const WhatsappApp());
+  runApp(const MeninTirkemem());
 }
